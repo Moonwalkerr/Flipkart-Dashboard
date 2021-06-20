@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { Button } from "@material-ui/core";
+import { IconButton, Button } from "@material-ui/core";
 import { ArrowDropDown } from "@material-ui/icons";
 import CustomizedInputBase from "./searchInput";
 
@@ -60,6 +60,9 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "capitalize",
     color: "#fafafafa",
   },
+  menuIcon: {
+    color: "#fafafafa",
+  },
 }));
 
 const Nav = () => {
@@ -71,6 +74,7 @@ const Nav = () => {
     <header className={classes.root}>
       {/* Main Div Element, Contains Logo Text and Search TextField */}
       <div className={classes.mainDiv}>
+        <IconButton className={classes.menuIcon}></IconButton>
         <h3 className={classes.navbarLogo}>
           Flipkart
           <div className={classes.innerHeading}>
@@ -79,7 +83,6 @@ const Nav = () => {
         </h3>
         <CustomizedInputBase />
       </div>
-
       {/* Essential Buttons on Flipkart dashboard */}
       <div className={classes.buttons}>
         <Button variant="contained" className={classes.login}>

@@ -1,11 +1,7 @@
-import Data from "../../data/db.json";
+import db from "../../data/db.json";
 
 const ProdListGrid = () => {
-  return (
-    <div className="ProdListGrid">
-      {Data.length > 0 ? <h1>Data</h1> : <h2>Loading....</h2>}
-    </div>
-  );
+  return <div className="ProdListGrid">{db.map((d) => console.log(d))}</div>;
 };
 
 export default ProdListGrid;

@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Button } from "@material-ui/core";
 import { ArrowDropDown } from "@material-ui/icons";
 import CustomizedInputBase from "./searchInput";
@@ -6,7 +7,7 @@ import CustomizedInputBase from "./searchInput";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
     padding: 7,
     backgroundColor: "#2874f0",
@@ -15,6 +16,11 @@ const useStyles = makeStyles((theme) => ({
     color: "#fafafafa",
     display: "flex",
   },
+  mainDiv: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   navbarLogo: {
     marginRight: 20,
     fontStyle: "italic",
@@ -22,12 +28,20 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
   },
+  buttons: {
+    width: "300px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
   login: {
-    backgroudColor: "#fafafafa",
+    textTransform: "capitalize",
+    color: "#2874f0",
+    fontWeight: "600",
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
-    marginLeft: 10,
+    letterSpacing: 1,
   },
   innerHeading: {
     fontSize: 11,
@@ -35,12 +49,15 @@ const useStyles = makeStyles((theme) => ({
   plus: {
     color: "yellow",
   },
-
   dropDown: {
-    color: "#fafafafa",
-    cursor: "pointer",
     display: "flex",
+    color: "#fafafafa",
     fontWeight: "bold",
+    textTransform: "capitalize",
+  },
+  shoppingCart: {
+    textTransform: "capitalize",
+    color: "#fafafafa",
   },
 }));
 
@@ -49,18 +66,27 @@ const Nav = () => {
 
   return (
     <header className={classes.root}>
-      <h3 className={classes.navbarLogo}>
-        Flipkart
-        <div className={classes.innerHeading}>
-          Explore <span className={classes.plus}>Plus</span>
-        </div>
-      </h3>
-      <CustomizedInputBase />
-      <Button className={classes.login}>Login</Button>
-      <Button className={classes.dropDown}>
-        More
-        <ArrowDropDown />
-      </Button>
+      <div className={classes.mainDiv}>
+        <h3 className={classes.navbarLogo}>
+          Flipkart
+          <div className={classes.innerHeading}>
+            Explore <span className={classes.plus}>Plus</span>
+          </div>
+        </h3>
+        <CustomizedInputBase />
+      </div>
+      <div className={classes.buttons}>
+        <Button variant="contained" className={classes.login}>
+          Login
+        </Button>
+        <Button className={classes.dropDown}>
+          More
+          <ArrowDropDown />
+        </Button>
+        <Button className={classes.shoppingCart}>
+          <ShoppingCartIcon /> Cart
+        </Button>
+      </div>
     </header>
   );
 };

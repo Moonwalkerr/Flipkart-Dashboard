@@ -1,0 +1,11 @@
+{
+    "products": [{
+        "prod1": {
+            "id": 0,
+            "name": "",
+            "imageURL": "",
+            "price": "21,299",
+            "rating": 4
+        }
+    }]
+}

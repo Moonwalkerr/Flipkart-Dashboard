@@ -4,6 +4,7 @@ import { Button } from "@material-ui/core";
 import { ArrowDropDown } from "@material-ui/icons";
 import CustomizedInputBase from "./searchInput";
 
+// stylings for the Navbar via material ui stylings
 const useStyles = makeStyles((theme) => ({
   root: {
     flexDirection: "row",
@@ -62,10 +63,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Nav = () => {
+  // fetching classes from useStyles()
   const classes = useStyles();
 
   return (
+    // Navbar header comp
     <header className={classes.root}>
+      {/* Main Div Element, Contains Logo Text and Search TextField */}
       <div className={classes.mainDiv}>
         <h3 className={classes.navbarLogo}>
           Flipkart
@@ -75,6 +79,8 @@ const Nav = () => {
         </h3>
         <CustomizedInputBase />
       </div>
+
+      {/* Essential Buttons on Flipkart dashboard */}
       <div className={classes.buttons}>
         <Button variant="contained" className={classes.login}>
           Login

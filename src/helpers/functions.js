@@ -1,16 +1,5 @@
-export const getData = (path, setter) => {
-  fetch(path, {
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  })
-    .then((res) => {
-      console.log(res);
-      return res.json();
-    })
-    .then((data) => {
-      console.log(data);
-      setter(data);
-    });
+export const getData = async (path, setter) => {
+  let res = await fetch(path);
+  let data = await res.json();
+  return setter(data);
 };

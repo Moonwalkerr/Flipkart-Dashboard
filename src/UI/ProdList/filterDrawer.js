@@ -14,20 +14,15 @@ const FilterDrawer = () => {
   // fetching classes from useStyles()
   const classes = useStyles();
 
-  const [value, setValue] = useState([500, 60000]);
-  const [preValue, setPreValue] = useState(value);
-  const [nextValue, setNextValue] = useState(null);
+  const [value, setValue] = useState([1, 100]);
+  // const [preValue, setPreValue] = useState(value);
+  // const [nextValue, setNextValue] = useState(null);
 
   //   slider event change handler
   const handleChange = (evt, newValue) => {
     setValue(newValue);
-    setNextValue(newValue);
+    // setNextValue(newValue);
   };
-
-  //   this function returns a valueText for showing on slider
-  function valuetext(value) {
-    return `${value}°C`;
-  }
   return (
     <div className={classes.root}>
       <h4>Check via Price Range</h4>
@@ -36,7 +31,6 @@ const FilterDrawer = () => {
         onChange={handleChange}
         valueLabelDisplay="auto"
         aria-labelledby="range-slider"
-        getAriaValueText={valuetext}
       />
     </div>
   );

@@ -1,7 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
-import db from "../../data/db.json";
 import FilterDrawer from "./filterDrawer";
 import ProductCard from "./productCard";
+import { useContext } from "react";
+import { AppContext } from "../../context/context";
 
 // stylings for the Navbar via material ui stylings
 const useStyles = makeStyles((theme) => ({
@@ -26,11 +27,12 @@ const useStyles = makeStyles((theme) => ({
 const ProdListGrid = () => {
   // fetching classes from useStyles()
   const classes = useStyles();
+  const displayData = useContext(AppContext).displayData[0];
   return (
     <div className={classes.dashboard}>
       <FilterDrawer />
       <div className={classes.root}>
-        {db.map((product) => {
+        {displayData.map((product) => {
           return <ProductCard product={product} />;
         })}
       </div>

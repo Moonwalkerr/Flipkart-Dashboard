@@ -16,7 +16,7 @@ const FilterDrawer = () => {
   const classes = useStyles();
 
   // fetching displayData state from Context layer
-  const [value, setValue] = useState([20, 100]);
+  const [value, setValue] = useState([100, 100000]);
   const [displayData, setDisplayData] = useContext(AppContext).displayData;
   const [preValue, setPreValue] = useState(value);
   const [nextValue, setNextValue] = useState(null);

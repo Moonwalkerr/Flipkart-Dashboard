@@ -7,11 +7,12 @@ import { AppContext } from "../../context/context";
 // stylings for the Navbar via material ui stylings
 const useStyles = makeStyles((theme) => ({
   dashboard: {
+    width: "100%",
     display: "flex",
     flexDirection: "row",
   },
   root: {
-    flex: 0.8,
+    flex: 0.95,
     margin: theme.spacing(1),
     display: "grid",
     gridTemplateColumns: "repeat(3,1fr)",

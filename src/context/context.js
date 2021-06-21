@@ -3,7 +3,6 @@ import db from "../data/db.json";
 export const AppContext = createContext();
 const AppContextProvider = (props) => {
   // displayData will be shown on dashboard
-  console.log(db);
   const [displayData, setDisplayData] = useState(db);
   return (
     <AppContext.Provider

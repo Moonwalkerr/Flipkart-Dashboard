@@ -6,7 +6,7 @@ import { AppContext } from "../../context/context";
 // stylings for the Navbar via material ui stylings
 const useStyles = makeStyles((theme) => ({
   root: {
-    flex: 0.35,
+    flex: 0.45,
     padding: 20,
   },
 }));
@@ -16,7 +16,7 @@ const FilterDrawer = () => {
   const classes = useStyles();
 
   // fetching displayData state from Context layer
-  const [value, setValue] = useState([1, 100]);
+  const [value, setValue] = useState([20, 100]);
   const [displayData, setDisplayData] = useContext(AppContext).displayData;
   const [preValue, setPreValue] = useState(value);
   const [nextValue, setNextValue] = useState(null);
@@ -35,6 +35,8 @@ const FilterDrawer = () => {
     <div className={classes.root}>
       <h4>Check via Price Range</h4>
       <Slider
+        max={100000}
+        min={100}
         value={value}
         onChange={handleChange}
         valueLabelDisplay="auto"
